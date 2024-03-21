@@ -1,0 +1,103 @@
+//Realice una pequeña calculadora,
+//utilizando funciones (una función de suma, una de multiplicación, una de resta, una de división…)
+
+    int num = 0;
+    int opcionElgida = 0;
+
+    printf("Ingrese un numero:\n");
+    fflush(stdin);
+    scanf("%d", &num);
+    system("pause");
+    system("cls");
+
+    opcionElgida=opcionesCalculadora();
+
+    calculadora(num, opcionElgida);
+
+
+
+    return 0;
+}
+
+int opcionesCalculadora()
+{
+    int opcion = 0;
+
+
+
+    printf("Usted ha ingresado a la calculadora.\nIngrese una de las siguientes opciones y luego presione ENTER:\n");
+    printf("1. Suma.\n");
+    printf("2. Resta.\n");
+    printf("3. Multiplicacion.\n");
+    printf("4. Division.\n");
+    printf("5. QUIT.\n");
+    printf("\n");
+    scanf("%d", &opcion);
+
+    if (opcion<1 || opcion>5)
+    {
+       printf("El numero ingresado no es valido.\nSe procedera a salir del programa.");
+    }
+
+    return opcion;
+}
+void calculadora(int numero, int opcion)
+{
+    int numero2 = 0;
+    int resultado = 0;
+
+    switch (opcion) {
+  case 1:
+
+      printf("\n");
+      printf("Ingrese un segundo valor y presione ENTER:\n");
+      fflush(stdin);
+      scanf("%d", &numero2);
+      int resultado = 0;
+      resultado= numero + numero2;
+      printf("El resultado de la suma de %d + %d es %d.", numero, numero2, resultado);
+
+    break ;
+
+    case 2:
+
+      printf("\n");
+      printf("Ingrese un segundo valor y presione ENTER:\n");
+      fflush(stdin);
+      scanf("%d", &numero2);
+      resultado= numero - numero2;
+      printf("El resultado de la resta de %d - %d es %d.", numero, numero2, resultado);
+
+      break ;
+
+      case 3:
+
+      printf("\n");
+      printf("Ingrese un segundo valor y presione ENTER:\n");
+      fflush(stdin);
+      scanf("%d", &numero2);
+      resultado= numero * numero2;
+      printf("El resultado de la multiplicacion entre %d y %d es %d.", numero, numero2, resultado);
+
+      break ;
+
+      case 4:
+
+      printf("\n");
+      printf("Ingrese un segundo valor y presione ENTER:\n");
+      fflush(stdin);
+      scanf("%d", &numero2);
+      int resto = 0;
+      resultado= numero / numero2;
+      resto= numero % numero2;
+      printf("El resultado de la division de %d entre %d es %d, y su resto es %d.", numero, numero2, resultado, resto);
+
+      break ;
+
+      case 5:
+
+      printf("\n");
+      printf("Usted eligio la opcion QUIT, se procedera a salir del programa.\n");
+
+      break ;
+    }
